@@ -1,0 +1,12 @@
+# dependencies
+node_modules
+
+# logs
+npm-debug.log
+
+# Nuxt build
+.nuxt
+nuxt-dist
+# Nuxt generate
+.vscode/settings.json
+.vscode/sftp.json

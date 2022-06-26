@@ -1,0 +1,13 @@
+创建article表
+create table article(id int(10) unsigned primary key auto_increment,title varchar(40) not null,content text not null,author varchar(10),create_time datetime)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+insert into admin (username,password) values (111111,123456);
+
+
+添加字段
+alter table article add status tinyint(1) unsigned not null DEFAULT 1;
+
+
+同时查询三个表；
+select a.*,sku.price,sku.stock,sku.marketPrice,sku.costPrice,sku.specs from (select goods.id,goods.name,goods.brand,goods.thumb,category.name as category_name from goods join category on goods.category_id=category.id) as a join sku on a.id=sku.goods_id\G;

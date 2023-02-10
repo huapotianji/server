@@ -18,6 +18,7 @@
     "moment": "^2.29.1",
     "mysql2": "^2.3.2",
     "nodemon": "^2.0.15",
+    "openai": "^3.1.0",
     "tencentcloud-sdk-nodejs": "^4.0.247"
   }
 }

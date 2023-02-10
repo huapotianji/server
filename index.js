@@ -20,17 +20,20 @@ app.use(koaBody({
 const cors = require('koa2-cors')
 app.use(cors())
 
-
-const test = require("./router/test")
 // 注册路由
+const test = require("./router/test")
 app
     .use(test.routes())
     .use(test.allowedMethods());
 
-// const router_user = require('./router/user_router')
-// app
-//     .use(router_user.routes())
-//     .use(router_user.allowedMethods());
-app.listen(3010, function () {
+const router_user = require('./router/user_router')
+app
+    .use(router_user.routes())
+    .use(router_user.allowedMethods());
+const chatgpt = require("./router/chatgpt_router")
+app
+    .use(chatgpt.routes())
+    .use(chatgpt.allowedMethods());
+app.listen(3015, function () {
     console.log("服务器运行中")
 })
